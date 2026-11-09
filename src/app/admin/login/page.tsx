@@ -1,6 +1,7 @@
 "use client";
 import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function AdminLogin() {
  const router = useRouter(); const [code,setCode] = useState(""); const [error,setError] = useState(""); const [busy,setBusy] = useState(false);
@@ -17,6 +18,6 @@ export default function AdminLogin() {
    <input aria-label="รหัสลับ 6 หลัก" autoComplete="one-time-code" inputMode="numeric" pattern="[0-9]{6}" maxLength={6} minLength={6} required value={code} onChange={e=>setCode(e.target.value.replace(/\D/g,"").slice(0,6))} placeholder="• • • • • •" className="w-full rounded-2xl border border-[#dbe5f1] bg-white px-4 py-4 text-center text-2xl tracking-[.6em] text-[#587da9] outline-none focus:border-[#789bc5]"/>
    {error && <p role="alert" className="mt-4 text-sm text-red-600">{error}</p>}
    <button disabled={busy || code.length!==6} className="btn-primary mt-6 w-full disabled:opacity-50">{busy ? "กำลังตรวจสอบ..." : "เข้าสู่ระบบ"}</button>
-   <a href="/" className="mt-5 inline-block text-xs text-[#9a8b7e] hover:text-[#789bc5]">กลับหน้าหลัก</a>
+   <Link href="/" className="mt-5 inline-block text-xs text-[#9a8b7e] hover:text-[#789bc5]">กลับหน้าหลัก</Link>
   </form></main>;
 }
