@@ -4,8 +4,8 @@
 
 ## สิ่งที่ต้องมี
 - macOS
-- Node.js 20.9 ขึ้นไป (แนะนำ LTS รุ่นปัจจุบัน)
-- npm (ติดตั้งมาพร้อม Node.js)
+- Node.js 22.23.4 (ดูไฟล์ `.nvmrc` ใช้ `nvm use` ได้)
+- Yarn 1.x (ติดตั้งด้วย `npm install -g yarn`)
 - โปรเจกต์ Supabase
 
 ## 1) ติดตั้ง Node.js
@@ -13,7 +13,7 @@
 
 ```bash
 node -v
-npm -v
+yarn -v
 ```
 
 ## 2) แตกไฟล์และติดตั้งแพ็กเกจ
@@ -21,7 +21,7 @@ npm -v
 
 ```bash
 cd ~/Downloads/parichart-monmanat-wedding
-npm install
+yarn install
 ```
 
 ## 3) สร้าง Supabase
@@ -70,7 +70,7 @@ openssl rand -hex 32
 ใน Terminal ที่อยู่ในโฟลเดอร์โปรเจกต์:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 เปิด:
@@ -95,7 +95,7 @@ npm run dev
 - ตรวจสอบสถานที่จัดงาน, ลิงก์แผนที่, ข้อมูลการเดินทาง, ภาพถ่าย, ข้อมูล PromptPay และประกาศความเป็นส่วนตัว
 
 ## การแก้ปัญหาเบื้องต้น
-- `npm: command not found`: ติดตั้ง Node.js LTS แล้วปิด/เปิด Terminal ใหม่
+- `yarn: command not found`: รัน `npm install -g yarn` แล้วปิด/เปิด Terminal ใหม่
 - `ENOENT package.json`: Terminal อยู่ผิดโฟลเดอร์ ให้ `cd` เข้าโฟลเดอร์ที่มี `package.json`
 - Supabase error: ตรวจ URL, keys และรัน `supabase/schema.sql` ให้ครบ
-- เปลี่ยน `.env.local` แล้วไม่เห็นผล: หยุด `npm run dev` ด้วย Control + C แล้วเริ่มใหม่
+- เปลี่ยน `.env.local` แล้วไม่เห็นผล: หยุด `yarn dev` ด้วย Control + C แล้วเริ่มใหม่
