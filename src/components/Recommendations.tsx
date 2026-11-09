@@ -5,8 +5,8 @@ import SectionBackground from "@/components/SectionBackground";
 
 type Recommendation = { id: string; category: "attraction" | "accommodation"; name: string; description: string; location_url: string; images: string[] };
 function RecommendationGroup({ title, subtitle, items, icon }: { title: string; subtitle: string; items: Recommendation[]; icon: "attraction" | "accommodation" }) {
-  if (!items.length) return null;
   const [active, setActive] = useState<Record<string, number>>({});
+  if (!items.length) return null;
   const Icon = icon === "attraction" ? Compass : BedDouble;
   return <section className="mt-16">
     <div className="mb-8 text-center"><p className="eyebrow">{icon === "attraction" ? "Explore nearby" : "Stay nearby"}</p><h3 className="mt-3 font-display text-3xl text-[#789bc5]">{title}</h3><p className="mt-3 font-thai text-sm text-[#8b796a]">{subtitle}</p><div className="gold-line mx-auto mt-5 max-w-24"/></div>

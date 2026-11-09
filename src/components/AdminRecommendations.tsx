@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { ImagePlus, Pencil, Trash2, X, MapPin } from "lucide-react";
 
 type Item = { id: string; category: "attraction" | "accommodation"; name: string; description: string; location_url: string; images: string[] };
-const blank = { category: "attraction" as const, name: "", description: "", location_url: "" };
+const blank: { category: Item["category"]; name: string; description: string; location_url: string } = { category: "attraction", name: "", description: "", location_url: "" };
 export default function AdminRecommendations() {
   const [items, setItems] = useState<Item[]>([]);
   const [form, setForm] = useState(blank);
